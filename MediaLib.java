@@ -3,6 +3,7 @@ public class MediaLib
   private Book book;
   private Movie movie;
   private Song song;
+  private String date;
 
   // //step6
 	// private static String owner = "PLTW";
@@ -20,6 +21,10 @@ public class MediaLib
 	private static int numBooks;
 	private static int numSongs;
 	private static int numMovies;
+
+	public MediaLib() {
+		date = DateManager.getDate();
+	}
 
 	public static int getNumEntries() {
 		//step18
@@ -76,6 +81,8 @@ public class MediaLib
 	String info = "";
  
 	// Step 5, avoid crashing by testing that book is not null before using its toString method
+	info += "Date Created: " + date + "\n";
+	
 	if (book != null)
   	info += "Book: " + book + "\n";
 
@@ -84,7 +91,12 @@ public class MediaLib
 
 	if (song != null)
   	info += "Song: " + song + "\n";
- 
+
 	return info;
   }
+
+//   public String getInfo()
+// 	{
+// 	return "The current book information is " + info;
+// 	}
 }
